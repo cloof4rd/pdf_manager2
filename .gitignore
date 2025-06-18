@@ -9,6 +9,12 @@ dist/
 __pycache__/
 *.spec
 
-# Ignore any local installers
+# Ignore installers
 *.exe
 *.msi
+
+# Ignore compiled Python files
+*.py[cod]
+
+# macOS metadata
+.DS_Store
