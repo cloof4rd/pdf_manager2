@@ -1,0 +1,14 @@
+# Ignore Python virtualenv
+env/
+
+# Ignore PyInstaller build artifacts
+build/
+dist/
+
+# Ignore caches and specs
+__pycache__/
+*.spec
+
+# Ignore any local installers
+*.exe
+*.msi
