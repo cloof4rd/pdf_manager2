@@ -9,24 +9,31 @@ on:
 jobs:
   build-windows:
     runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v3
 
-      - uses: actions/setup-python@v4
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v4
         with:
           python-version: "3.12"
 
-      - run: |
+      - name: Install dependencies
+        run: |
           pip install --upgrade pip
           pip install pyinstaller PyPDF2
 
-      - run: |
-          pyinstaller --onefile --windowed --add-data "priority_config.json;." pdf_manager_gui.py
+      - name: Build executable
+        run: |
+          pyinstaller             --onefile             --windowed             --add-data "priority_config.json;."             pdf_manager_gui.py
 
-      - run: |
+      - name: Zip the .exe
+        run: |
           Compress-Archive -Path dist\pdf_manager_gui.exe -DestinationPath pdf_manager2_windows.zip
 
-      - uses: actions/upload-artifact@v3
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
         with:
           name: pdf-manager-windows
           path: pdf_manager2_windows.zip
