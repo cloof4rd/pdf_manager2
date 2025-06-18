@@ -1,12 +1,14 @@
-# Ignore Python virtualenv
+# python venvs
 env/
+venv/
 
-# Ignore PyInstaller build artifacts
+# PyInstaller artifacts
 build/
 dist/
 
-# Ignore caches, specs, installers
+# caches, OS cruft
 __pycache__/
 *.spec
 *.exe
 *.msi
+.DS_Store
