@@ -1,0 +1,14 @@
+{
+  "batch_order": [
+    "INV",
+    "PL",
+    "COO"
+  ],
+  "keyword_order": [
+    "1348",
+    "5724",
+    "2347",
+    "3249"
+  ],
+  "numeric_sort": "asc"
+}
