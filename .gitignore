@@ -18,3 +18,8 @@ __pycache__/
 
 # macOS metadata
 .DS_Store
+env/
+dist/
+build/
+__pycache__/
+*.spec
